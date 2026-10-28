@@ -13,9 +13,9 @@ public final class RobotConstants {
     /** Intake power when the trigger is fully pressed. */
     public static final double INTAKE_MAX_POWER = 1.0;
 
-    /** Open-loop power for both shooter motors while the shooter is on. */
-    public static final double SHOOTER_POWER = 0.5;
-
+    /** Open-loop power for the shooter motor while the shooter is on. */
+    public static final double SHOOTER_POWER = 0.783;
+// assuming 4700 rpm. divide amt by 6000
     /**
      * Axon MAX travel from servo position 0.0 to 1.0, in degrees.
      * Match this to the operating angle saved in the Axon programmer.
