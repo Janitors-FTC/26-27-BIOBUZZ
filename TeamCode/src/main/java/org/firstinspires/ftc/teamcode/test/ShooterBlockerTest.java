@@ -16,7 +16,7 @@ public class ShooterBlockerTest extends LinearOpMode {
         ShooterBlocker blocker = new ShooterBlocker(hardwareMap);
 
         telemetry.addLine("Blocker starts at 0 degrees.");
-        telemetry.addLine("Gamepad 1 A toggles the run angle.");
+        telemetry.addLine("Gamepad 1 A toggles 75 degrees.");
         telemetry.update();
         waitForStart();
 

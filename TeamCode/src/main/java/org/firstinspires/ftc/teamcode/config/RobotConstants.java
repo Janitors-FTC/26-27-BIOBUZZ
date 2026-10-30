@@ -17,14 +17,11 @@ public final class RobotConstants {
     public static final double SHOOTER_POWER = 1.0;
 // assuming 4700 rpm. divide amt by 6000
     // made back to 1.0 for 6000 constants
-    /**
-     * Axon MAX travel from servo position 0.0 to 1.0, in degrees.
-     * Match this to the operating angle saved in the Axon programmer.
-     */
-    public static final double AXON_RANGE_DEGREES = 360.0;
-
     public static final double SHOOTER_BLOCKER_REST_DEGREES = 0.0;
     public static final double SHOOTER_BLOCKER_RUN_DEGREES = 75.0;
+
+    /** Degrees across servo positions 0 to 1 on the hub's normal signal. */
+    public static final double SHOOTER_BLOCKER_RANGE_DEGREES = 270.0;
 
     /** Flower descorer angle when it is down. */
     public static final double FLOWER_DESCORER_DOWN_DEGREES = 0.0;
