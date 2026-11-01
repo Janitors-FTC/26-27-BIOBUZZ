@@ -24,6 +24,10 @@ public final class Shooter {
         motor.setPower(running ? RobotConstants.SHOOTER_POWER : 0.0);
     }
 
+    public void setPower(double power) {
+        motor.setPower(Math.max(0.0, Math.min(1.0, power)));
+    }
+
     public double getPower() {
         return motor.getPower();
     }

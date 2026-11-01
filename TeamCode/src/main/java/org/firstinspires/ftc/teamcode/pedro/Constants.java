@@ -104,15 +104,14 @@ public class Constants {
         c.xPodPort.set(0);
         c.yPodPort.set(1);
         c.ticksPerUnit.set(505.316944406);
-        c.xPodOffset.set(-0.0);
-        c.yPodOffset.set(-0.0);
+        c.xPodOffset.set(145.82436);
+        c.yPodOffset.set(129.82436);
         c.xPodDirection.set(OctoQuad.EncoderDirection.FORWARD);
         c.yPodDirection.set(OctoQuad.EncoderDirection.FORWARD);
         c.globalDistanceUnit.set(DistanceUnit.INCH);
         c.offsetUnits.set(DistanceUnit.INCH);
         c.i2cRecoveryMode.set(OctoQuad.I2cRecoveryMode.MODE_1_PERIPH_RST_ON_FRAME_ERR);
-        c.headingScalar.set(1.0210343443159844);
-
+        c.headingScalar.set(1.4905338296006736);
     });
     public static Follower create(HardwareMap h) {
         return new Follower(
