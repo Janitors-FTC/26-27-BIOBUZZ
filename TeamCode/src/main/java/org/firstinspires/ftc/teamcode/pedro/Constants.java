@@ -94,7 +94,7 @@ public class Constants {
                 c.analogMinVoltage.set(0.001);
                 c.analogMaxVoltage.set(3.219);
                 c.podOffset.set(Vector2D.cartesian(-dtLength, dtWidth));
-                c.angleOffsetRad.set(3.55);
+                c.angleOffsetRad.set(2.49);
                 c.encoderReversed.set(true);
             }
 
