@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import org.firstinspires.ftc.teamcode.config.RobotConstants;
 
 /**
- * Shooter blocker. Rest is 0 degrees. Running moves to 75 degrees and holds.
+ * Shooter blocker. Starts at 100 degrees. Running moves back to 0 degrees and holds.
  */
 public final class ShooterBlocker {
     public static final String SERVO_NAME = "shooterblocker";

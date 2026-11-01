@@ -22,6 +22,8 @@ import java.util.function.Supplier;
 import static com.pedropathing.api.Paths.curve;
 import static com.pedropathing.api.Paths.line;
 
+import org.firstinspires.ftc.teamcode.pedro.swerve.DrivetrainHelper;
+
 public class Tests extends Procedure {
     enum Test {
         @DisplayName("Hold Test")
@@ -300,10 +302,20 @@ class TestsLocalization extends TuningOpMode<Boolean> {
         waitForStart();
         localizer.setPose(Pose.zero());
 
+        // ANP, 10/3/2026, added debugStringEnabled which
+        // toggles on gamepadX.A and outputs the drivetrain debug info
+        boolean debugStringEnabled = false;
         while (opModeIsActive()) {
+            if (gamepad1.aWasPressed() || gamepad2.aWasPressed()) {
+                debugStringEnabled = !debugStringEnabled;
+            }
             drivetrain.drive(new DrivePowers(-gamepad1.left_stick_y, -gamepad1.left_stick_x, -gamepad1.right_stick_x), true);
             localizer.update();
             telemetry.addData("Pose", localizer.pose());
+            if (debugStringEnabled) {
+                telemetry.addLine("Drivetrain Debug String:\n" +
+                        DrivetrainHelper.debugString(drivetrain));
+            }
             telemetry.update();
         }
         return true;

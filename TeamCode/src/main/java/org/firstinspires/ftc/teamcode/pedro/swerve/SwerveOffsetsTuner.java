@@ -12,7 +12,8 @@ import org.firstinspires.ftc.teamcode.pedro.Constants;
  * @author Kabir Goyal
  * @author Havish Sripada
  */
-@TeleOp
+@SuppressWarnings("unused")
+@TeleOp(name = "SwerveOffsetsTuner", group = "Tests")
 public class SwerveOffsetsTuner extends OpMode {
     boolean debugStringEnabled = false;
     Follower follower;
@@ -28,7 +29,6 @@ public class SwerveOffsetsTuner extends OpMode {
         if (gamepad1.aWasPressed() || gamepad2.aWasPressed()) {
             debugStringEnabled = !debugStringEnabled;
         }
-
 
         telemetry.addLine("This OpMode will run all four swerve pods in the direction they think is forward"
                 + "\nensure your bot is not on the ground while running");
@@ -58,7 +58,9 @@ public class SwerveOffsetsTuner extends OpMode {
 
         if (debugStringEnabled) {
             telemetry.addLine("Drivetrain Debug String:\n" +
-                    follower.drivetrain.debug());
+                    // ANP, 10/3/2026 - there is no method debugString() on drivetrain
+                    // follower.drivetrain.debugString()
+                    DrivetrainHelper.debugString(follower.drivetrain));
         }
         telemetry.update();
     }

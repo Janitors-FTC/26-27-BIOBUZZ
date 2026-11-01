@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.mechanism.ShooterBlocker;
 
 /**
- * Parks the shooter blocker at 0 degrees. Gamepad 1 A toggles the run angle.
+ * Parks the shooter blocker at 100 degrees. Gamepad 1 A toggles back to 0.
  */
 @TeleOp(name = "Test: Shooter Blocker", group = "Test")
 public class ShooterBlockerTest extends LinearOpMode {
@@ -15,8 +15,8 @@ public class ShooterBlockerTest extends LinearOpMode {
     public void runOpMode() {
         ShooterBlocker blocker = new ShooterBlocker(hardwareMap);
 
-        telemetry.addLine("Blocker starts at 0 degrees.");
-        telemetry.addLine("Gamepad 1 A toggles 75 degrees.");
+        telemetry.addLine("Blocker starts at 100 degrees.");
+        telemetry.addLine("Gamepad 1 A moves it back to 0.");
         telemetry.update();
         waitForStart();
 

@@ -17,8 +17,8 @@ public final class RobotConstants {
     public static final double SHOOTER_POWER = 1.0;
 // assuming 4700 rpm. divide amt by 6000
     // made back to 1.0 for 6000 constants
-    public static final double SHOOTER_BLOCKER_REST_DEGREES = 0.0;
-    public static final double SHOOTER_BLOCKER_RUN_DEGREES = 75.0;
+    public static final double SHOOTER_BLOCKER_REST_DEGREES = 100.0;
+    public static final double SHOOTER_BLOCKER_RUN_DEGREES = 0.0;
 
     /** Degrees across servo positions 0 to 1 on the hub's normal signal. */
     public static final double SHOOTER_BLOCKER_RANGE_DEGREES = 270.0;

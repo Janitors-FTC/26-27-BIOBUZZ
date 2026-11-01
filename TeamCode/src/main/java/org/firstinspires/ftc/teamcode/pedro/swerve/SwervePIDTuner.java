@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.pedro.Constants;
  * You should use this to tune your swerve pod PID values
  * @author Havish Sripada
  */
-@TeleOp
+@TeleOp(name = "Test: SwervePIDTuner", group = "Test")
 public class SwervePIDTuner extends OpMode {
     private static final TuningMode mode = TuningMode.LEFT_FRONT;
 

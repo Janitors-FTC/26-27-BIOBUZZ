@@ -12,11 +12,13 @@ import org.firstinspires.ftc.teamcode.mechanism.ShooterBlocker;
  * Match control for the mechanisms. Drive is not in this OpMode yet.
  *
  * Gamepad 1 right trigger runs the intake in proportion to the trigger.
- * Gamepad 1 A toggles the shooter and the shooter blocker together.
+ * Gamepad 1 left trigger toggles the shooter and the shooter blocker together.
  * Gamepad 1 right bumper toggles the flower descorer down and up.
  */
 @TeleOp(name = "Match", group = "Match")
 public class MatchTeleOp extends LinearOpMode {
+
+    private static final double TRIGGER_PRESSED = 0.5;
 
     @Override
     public void runOpMode() {
@@ -26,25 +28,26 @@ public class MatchTeleOp extends LinearOpMode {
         FlowerDescorer descorer = new FlowerDescorer(hardwareMap);
 
         telemetry.addLine("Right trigger: intake");
-        telemetry.addLine("A: shooter and blocker");
+        telemetry.addLine("Left trigger: shooter and blocker");
         telemetry.addLine("Right bumper: flower descorer");
         telemetry.update();
         waitForStart();
 
         boolean shooterOn = false;
-        boolean lastA = false;
+        boolean lastLeftTrigger = false;
         boolean descorerDown = false;
         boolean lastBumper = false;
 
         while (opModeIsActive()) {
             intake.setTrigger(gamepad1.right_trigger);
 
-            if (gamepad1.a && !lastA) {
+            boolean leftTrigger = gamepad1.left_trigger > TRIGGER_PRESSED;
+            if (leftTrigger && !lastLeftTrigger) {
                 shooterOn = !shooterOn;
-                blocker.setRunning(shooterOn);
                 shooter.setRunning(shooterOn);
+                blocker.setRunning(shooterOn);
             }
-            lastA = gamepad1.a;
+            lastLeftTrigger = leftTrigger;
 
             if (gamepad1.right_bumper && !lastBumper) {
                 descorerDown = !descorerDown;
